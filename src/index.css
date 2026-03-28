@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=Space+Grotesk:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white antialiased;
+    background-image: 
+      radial-gradient(circle at 50% -20%, #ff6b0015, transparent 50%),
+      radial-gradient(circle at 0% 100%, #ff6b0005, transparent 40%);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-orange-500/50 transition-colors;
+  }
+}
+
+.glass {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+}
+
+.glass-hover {
+  @apply hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-white/40;
+}
+
+.orange-glow {
+  box-shadow: 0 0 40px -10px rgba(255, 107, 0, 0.3);
+}
